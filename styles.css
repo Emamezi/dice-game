@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Carlito&family=Lato&display=swap');
+:root {
+  --dice-dimension: 150px;
+  --dice-color: #141521;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Carlito', sans-serif;
+  /* font-family: "Lato", sans-serif; */
+  font-weight: 400;
+  width: 100%;
+  color: black;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right top, rgb(20, 21, 33), rgb(63, 76, 119));
+}
+
+main {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.player-container {
+  display: flex;
+  height: 80%;
+  width: 85%;
+  justify-content: center;
+  align-items: center;
+  /* flex-direction: column; */
+}
+
+.player {
+  display: flex;
+  flex: 50%;
+  flex-direction: column;
+  word-spacing: 2px;
+  letter-spacing: 2px;
+  height: 100%;
+  text-align: center;
+  border-radius: 10px;
+  background: #3f506e;
+  margin: 100px;
+  align-items: center;
+}
+
+.player-active {
+  background-color: lightgray;
+}
+
+.current {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-transform: uppercase;
+  height: 20%;
+  color: #fff;
+  /* height: 200px; */
+  background: var(--dice-color);
+  margin-top: 2.5em;
+  width: 60%;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.name {
+  margin: 2rem 0;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}
+
+.score {
+  font-size: 4rem;
+  text-transform: uppercase;
+  margin-bottom: 4rem;
+  color: var(--dice-color);
+}
+
+.current-score {
+  font-size: 1.9rem;
+}
+
+.dice {
+  position: absolute;
+  top: 30%;
+  right: 50%;
+  width: var(--dice-dimension);
+  height: var(--dice-dimension);
+  transform: translateX(50%);
+}
+
+.btn {
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  cursor: pointer;
+  border: none;
+  margin: 0.75rem;
+  padding: 0.5rem;
+  border-radius: 10px;
+  transform: translateX(-55%);
+  /* transition: margin 0.5s; */
+}
+
+/* .btn:hover {
+  margin: 1rem;
+} */
+
+.btn.btn-rules {
+  top: 1rem;
+}
+
+.btn.btn-roll {
+  top: 60%;
+}
+
+.btn.btn-hold {
+  top: 70%;
+}
+
+.btn.btn-reset {
+  top: 80%;
+}
+
+.hidden {
+  display: none;
+}
+
+.player-winner {
+  background-color: #2f2f2f;
+}

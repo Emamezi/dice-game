@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Dice-Game</title>
+</head>
+
+<body>
+    <main>
+        <button class="btn btn-rules show-modal">Game Rules</button>
+        <div class="player-container">
+            <div class="player player-0 player-active">
+                <h2 class="name" id="name-0">Player 1</h2>
+                <p class="score" id="score-0">12</p>
+                <div class="current cur-0">
+                    <p>Current</p>
+                    <p class="current-score" id="current-0">5</p>
+                </div>
+
+            </div>
+            <div class="player player-1">
+                <h2 class="name" id="name-0">Player 2</h2>
+                <p class="score" id="score-1">18</p>
+                <div class="current cur-1">
+                    <p>Current</p>
+                    <p class="current-score" id="current-1">3</p>
+                </div>
+            </div>
+            <!-- <div class=" player player-winner">
+                <h2>You Won</h2>
+                <h3>🎉</h3>
+            </div> -->
+        </div>
+        <img src="dice-6.png" alt="dice-image" class="dice">
+
+        <button class="btn btn-roll">Roll dice</button>
+        <button class="btn btn-hold">Hold</button>
+        <button class="btn btn-reset">Reset Game</button>
+
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
