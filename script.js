@@ -34,18 +34,11 @@ const init = function () {
   player1.classList.remove('player-active');
   player0.classList.remove('player-winner');
   player1.classList.remove('player-winner');
-  document.querySelector(`.cur-${activePlayer}`).classList.remove('hidden');
+  document.querySelector(`.cur-0`).classList.remove('hidden');
+  document.querySelector(`.cur-1`).classList.remove('hidden');
 };
 
 init();
-
-// document.addEventListener('Keydown', function () {
-//   console.log('a key was pressed');
-//   console.log(e.key);
-//   if (e.key === 'Escape' && !showmodal.classList.contains('hidden')) {
-//     closeModal();
-//   }
-// });
 
 const changePlayer = function () {
   document.getElementById(`current-${activePlayer}`).textContent = 0;
@@ -84,7 +77,6 @@ btnRoll.addEventListener('click', function () {
     dice.classList.remove('hidden');
     // Updating the current score
     currentScore += rolledNumber;
-    // currentP0.textContent = currentScore;
 
     if (rolledNumber != 1) {
       document.getElementById(`current-${activePlayer}`).textContent =
@@ -95,7 +87,7 @@ btnRoll.addEventListener('click', function () {
   }
 });
 
-// Hold buton Implemtation
+// Hold button Implemtation
 btnHold.addEventListener('click', function () {
   if (Playing) {
     scores[activePlayer] += currentScore;
@@ -118,4 +110,5 @@ btnHold.addEventListener('click', function () {
   }
 });
 
+// Reset button functionality
 btnReset.addEventListener('click', init);
