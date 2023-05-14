@@ -1,5 +1,9 @@
 'use script';
 
+const showmodal = document.querySelector('.modal');
+const overlay = document.querySelector('.overlay');
+const btnCloseModal = document.querySelector('.close-modal');
+const btnRules = document.querySelector('.btn-rules');
 const btnRoll = document.querySelector('.btn-roll');
 const btnHold = document.querySelector('.btn-hold');
 const btnReset = document.querySelector('.btn-reset');
@@ -35,6 +39,14 @@ const init = function () {
 
 init();
 
+// document.addEventListener('Keydown', function () {
+//   console.log('a key was pressed');
+//   console.log(e.key);
+//   if (e.key === 'Escape' && !showmodal.classList.contains('hidden')) {
+//     closeModal();
+//   }
+// });
+
 const changePlayer = function () {
   document.getElementById(`current-${activePlayer}`).textContent = 0;
   activePlayer = activePlayer === 0 ? 1 : 0;
@@ -42,6 +54,27 @@ const changePlayer = function () {
   player0.classList.toggle('player-active');
   player1.classList.toggle('player-active');
 };
+const openModal = function () {
+  showmodal.classList.remove('hidden');
+  overlay.classList.remove('hidden');
+};
+
+const closeModal = function () {
+  showmodal.classList.add('hidden');
+  overlay.classList.add('hidden');
+};
+
+// show modal
+btnRules.addEventListener('click', openModal);
+
+// Close modal
+btnCloseModal.addEventListener('click', closeModal);
+overlay.addEventListener('click', closeModal);
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape' && !showmodal.classList.contains('hidden')) {
+    closeModal();
+  }
+});
 
 // roll dice
 btnRoll.addEventListener('click', function () {
